@@ -45,7 +45,7 @@ class StaticController < ApplicationController
 		@opt = @@opt
 		@dat = @@data
 		if @@fname.blank? 
-			@@fname = 'new_compiled_sheet'
+			@@fname = 'newCompiledExcel'
 		end
 
 		@file_name = @@fname
