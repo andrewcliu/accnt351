@@ -1,0 +1,19 @@
+	wb = xlsx_package.workbook
+
+	if @opt == 'merge'
+	  wb.add_worksheet(:name => 'Default Sheet') do |sheet|
+	  	dat = @dat.reduce([], :concat)
+	  	dat.each do |f|
+				sheet.add_row f
+	  	end
+	  end
+	else 
+		@dat.each do |dt|
+		  wb.add_worksheet(:name => dt.first[:title]) do |sheet|
+		  	dt.each_with_index do |f,i|
+		  		next if i == 0 
+					sheet.add_row f
+		  	end
+		  end
+		end
+	end

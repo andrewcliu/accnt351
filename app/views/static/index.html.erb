@@ -1,0 +1,81 @@
+<div class='text-center'>
+	<h1 class='title'>Accounting 351 - Individual Project <br> by Andrew Liu</h1>
+</div>
+<div class='row'>
+	<div class='col-md-8'>
+		<h3 class='title'>The Problem</h3>
+		<p>
+			Copy and pasting multiple excel worksheets into one master excel file takes time. Instead of doing it manually, I decided to solve it using existing dependencies online with Ruby.
+		</p>
+		<p>
+			This application will merge all worksheets into one workbook or into one master worksheet (tested with .xslx and .xslm). Instead of having to manually copy and paste, just upload the files and have the application do all the work.
+		</p>
+		<hr>
+		<h3 class='title'>
+			The Tools
+		</h3>
+		<table class='table table-sm'>
+			<tr>
+				<td><%= link_to 'Ruby 2.7', 'https://www.ruby-lang.org/en/' %></td>
+				<td>Programming language</td>
+			</tr>
+			<tr>
+				<td><%= link_to 'Rails 5.2', 'https://rubyonrails.org/' %></td>
+				<td>MVC (model, view, controller) Framework for quick application building</td>
+			</tr>
+			<tr>
+				<td><%= link_to 'Roo gem', 'https://github.com/roo-rb/roo'%></td>
+				<td>A dependency to read and parse through multiple Excel sheets</td>
+			</tr>
+			<tr>
+				<td><%= link_to 'Axlsx gem', 'https://github.com/caxlsx/caxlsx_rails' %></td>
+				<td>A dependency used to write into new Excel sheets</td>
+			</tr>
+			<tr>
+				<td><%= link_to 'Bootstrap gem', 'https://rubygems.org/gems/bootstrap/versions/5.1.3?locale=en' %></td>
+				<td>A dependency to quickly style the application</td>
+			</tr>
+		</table>
+		<hr>
+		<h3 class='title'>
+			Teach The World
+		</h3>
+		<p>
+			<u>What is Ruby?</u> <br>
+			Ruby, a programming language akin to Python, C#, and .Net, stands out as an open-source platform with diverse applications. It finds utility in various domains, including scripting, desktop applications, and web development. However, Ruby is gradually fading as more Python and various Javascript libraries (React) are starting to take reign.
+		</p>
+
+		<p><u>How is it used?</u> <br>
+			Similar to numerous programming languages, it boasts a wide range of applications. However, Ruby gained prominence primarily due to Rails, the web application framework renowned for rapidly developing websites.
+		</p>
+
+		<p><u>Why is it such a powerful tool?</u> <br>
+			Similar to Python, it boasts readability and ease of comprehension. Like Python and many other programming languages, it exhibits versatility, serving as a powerful tool limited only by one's imagination. Proficiency in programming empowers individuals to create solutions beyond the constraints imposed by specific off-the-shelf software or programs, often leveraging APIs for customized functionality.
+			<br><br>
+			When it comes to readability, I believe Ruby reigns supreme. For example, <br>
+			<%= image_tag('image_1.png', style:'width:50%;') %>
+		</p>
+
+	</div>
+
+	<div class='col-md-4'>
+		<div class='jumbotron'>
+			<h3 class='title'>Start Application Here:</h3>
+			<label>Upload Excel Files</label>
+			<form action="static/file_upload" method="post" enctype="multipart/form-data">
+			  <input class="form-control" type="file" id="formFileMultiple" name='files[]' multiple required>
+			  <br>
+			  <label>Your Option</label>
+				<select class="form-select" aria-label="Default select example" name='merge_type'>
+				  <option value="separate">Separate sheets (default)</option>
+				  <option value="merge">Merge into one sheet</option>
+				</select>
+				<br>
+			  <label>New File Name (optional)</label>
+			  <input class='form-control' type="text" name="new_name" placeholder='Test123'>
+			  <br>
+			  <input type='submit' name='submit' class='btn btn-primary'>
+			 </form>
+		</div>
+	</div>
+</div>
